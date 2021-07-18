@@ -1,0 +1,29 @@
+version: '3.6'
+services:
+
+  app:
+    build: ./src/energy_cross_border_flows/app
+    links:
+      - db_manager
+    ports:
+      - 8050:8050
+
+  db_manager:
+    build: ./src/energy_cross_border_flows/db_manager
+    depends_on:
+      - postgres
+    ports:
+      - 8000:8000
+  
+  postgres:
+    image: library/postgres
+    restart: unless-stopped
+    ports:
+    - 5432:5432/tcp
+    environment:
+    - POSTGRES_PASSWORD=secretpassword
+    - POSTGRES_USER=application
+    - POSTGRES_DATABASE=application
+    hostname: postgres
+    volumes:
+    - ./pgdata/data:/var/lib/postgresql/data

@@ -1,0 +1,8 @@
+ip: '0.0.0.0'
+user: 'application'
+passwd: 'secretpassword'
+database: 'application'
+limitation: 0.20
+scope:
+  NL: BE,DK,DE,NO
+  DE: AT,BE,CZ,DK,FR,LU,NL,NO,PL,CH,SE
