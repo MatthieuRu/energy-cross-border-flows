@@ -93,7 +93,7 @@ All of the steps, bellow can be run **locally**.
 The postgre server need to be running.
 ```
 conda activate energy-cross-border-flows
-cd src/energy_cross_border_flows/db_manage/
+cd src/energy_cross_border_flows/db_manager/
 python main.py 0.0.0.0
 ```
 
