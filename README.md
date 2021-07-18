@@ -73,22 +73,23 @@ create unique index "ci_flow_id_idx" on dexter.energy_cross_border_flows(country
 
 In this section we are not talking about the Scraper
 
-1. The Postgre Server
+1. **Postgre**
+
 You can use the config file, to know the credentials. If needed, you connect to the database by using any interface of data management. It's running on the localhost with port 5432. The database will be empty until you run the scraper `main.py`.
 
-2. The db_manager x Endpoints
+2. **The db_manager x Endpoints**
 - `http://0.0.0.0:8000/create-schema` to create the schema
 - `http://0.0.0.0:8000/delete-schema` to delete in case you want to change the schema.
 - `http://0.0.0.0:8000/date/{date}/country/{country_a}/country/{country_b}` to query the data for a specifics date between two country
 
 
-3. The app
+3. **The app**
 Visit`http://0.0.0.0:8050/`.
 
 
 All of the steps, bellow can be run **locally**.
 
-1. The db_manager
+1. **The db_manager**
 
 The postgre server needs to be running.
 ```
@@ -97,7 +98,7 @@ cd src/energy_cross_border_flows/db_manager/
 python main.py 0.0.0.0
 ```
 
-2. The app
+2. **The app**
 
 The postgre server x the db_manager container need to be running.
 ```
