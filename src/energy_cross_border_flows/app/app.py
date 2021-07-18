@@ -134,7 +134,7 @@ app.layout = html.Div(
 
 @app.callback(
     Output('dropdown_b', 'options'),
-    Input("dropdown_a", "value"),
+    Input('dropdown_a', 'value')
 )
 def update_countries_b(country_a: str):
     """if we change country a, we need to update the list

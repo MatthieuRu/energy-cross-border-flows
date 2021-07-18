@@ -12,8 +12,9 @@ Table of Contents
          * [Docker-Compose](#docker-compose)
          * [Conda Environment](#conda-environment)
       * [Usage](#usage)
-         * [Scraper](#scraper)
          * [Docker-Compose](#docker-compose-1)
+         * [Scraper](#scraper)
+
 
 
 ## Summary
@@ -88,6 +89,7 @@ Visit`http://0.0.0.0:8050/`.
 All of the steps, bellow can be run **locally**.
 
 1. The db_manager
+
 The postgre server need to be running.
 ```
 conda activate energy-cross-border-flows
@@ -95,7 +97,8 @@ cd src/energy_cross_border_flows/db_manage/
 python main.py 0.0.0.0
 ```
 
-1. The db_manager
+2. The app
+
 The postgre server x the db_manager container need to be running.
 ```
 conda activate energy-cross-border-flows
@@ -104,16 +107,14 @@ python app.py 0.0.0.0
 ```
 
 ### Scraper
-```
 Scraper Class which allow to scrape the data from enstoe, for a two specifics countries betwen now and a year ago.
-```
 
 The class is associate a to a script: `main.py`, which is runing a scraper for a list of countries in **scope** coming from a `config.yml`. You need to add as argument the api key provide by entsoe.
 *The container with the Postrge & the db_manager need to be run to be able to store the data.*
 
 To run the scraper:
 ```
-conda env create
+conda activate energy-cross-border-flows
 cd src/energy_cross_border_flows/scraper/
 python main.py [api-key]
 ```
