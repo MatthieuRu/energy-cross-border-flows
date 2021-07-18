@@ -68,6 +68,17 @@ async def add_dataframe(data: List[Flow]):
 
     return data
 
+@app.get("/create-schema")
+async def create_schema():
+    """ Create the schema if needed
+    """
+    return server._create_schema('./dexter.sql')
+
+@app.get("/delete-schema")
+async def delete_schema():
+    """ Delete the schema if needed
+    """
+    return server._delete_schema()
 
 if __name__ == "__main__":
     """Run the API on the machin
