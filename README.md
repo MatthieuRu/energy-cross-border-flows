@@ -19,11 +19,11 @@ Table of Contents
 
 ## Summary
 
-This repository included differentes packages to be able to run an application where user can vizualise the flow of energy between countries. The repository includes:
+This repository included differentes packages to be able to run an application where user can visualize the flow of energy between countries. The repository includes:
 
 - `scraper`: Scraper class to scrape the data using the [entsoe-library](https://github.com/EnergieID/entsoe-py)
-- `db_manager`: Database management classes with a api usinf [FastApi](https://fastapi.tiangolo.com/). It also included a DockerFile, so it can be deploy locally or on a docker container.
-- `app`: The app has been developed in [dash](https://plotly.com/dash/). It also included a DockerFile, so it can be deploy locally or on a docker container.
+- `db_manager`: Database management classes with an api using [FastApi](https://fastapi.tiangolo.com/). It also included a DockerFile, so it can be deploy locally or on a docker container.
+- `app`: The app has been developed in [dash](https://plotly.com/dash/). It also included a DockerFile, so it can be deployed locally or on a docker container.
 
 The design of the application is the following:
 
@@ -42,7 +42,7 @@ The design of the application is the following:
 - ```./stop.sh``` *Stopes the docker images including the postgre server*
 
 ### Conda Environment
-If need to you can also use a conda environment. It's taking in account all the requirement from all the packages.
+If needed you can also use a conda environment. It's taking in account all the requirements from all the packages.
 - ```conda env create``` *Create the conda environment based on the environment.yml.*
 - ```conda activate energy-cross-border-flows``` *Activate the conda environment.*
 
@@ -74,7 +74,7 @@ create unique index "ci_flow_id_idx" on dexter.energy_cross_border_flows(country
 In this section we are not talking about the Scraper
 
 1. The Postgre Server
-You can use the config file, to know the credentials. if needed, you connect to the database by using any interface of data management. It's running on the localhost with port 5432. The database will be empty until you run the scraper `main.py`.
+You can use the config file, to know the credentials. If needed, you connect to the database by using any interface of data management. It's running on the localhost with port 5432. The database will be empty until you run the scraper `main.py`.
 
 2. The db_manager x Endpoints
 - `http://0.0.0.0:8000/create-schema` to create the schema
@@ -90,7 +90,7 @@ All of the steps, bellow can be run **locally**.
 
 1. The db_manager
 
-The postgre server need to be running.
+The postgre server needs to be running.
 ```
 conda activate energy-cross-border-flows
 cd src/energy_cross_border_flows/db_manager/
@@ -107,10 +107,10 @@ python app.py 0.0.0.0
 ```
 
 ### Scraper
-Scraper Class which allow to scrape the data from enstoe, for a two specifics countries betwen now and a year ago.
+Scraper Class which allows scraping the data from enstoe,  for two specific countries between now and a year ago.
 
-The class is associate a to a script: `main.py`, which is runing a scraper for a list of countries in **scope** coming from a `config.yml`. You need to add as argument the api key provide by entsoe.
-*The container with the Postrge & the db_manager need to be run to be able to store the data.*
+The class is associate a to a script: `main.py`, which is running a scraper for a list of countries in **scope** coming from a `config.yml`. You need to add as argument the api key provided by entsoe.
+*The container with the Postgre & the db_manager need to be run to be able to store the data.*
 
 To run the scraper:
 ```
